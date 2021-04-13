@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<title>Effective Wording</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>EFFECTIVE WORDING</b></h1>
+  <p>Detect profanity words and replace them with <span class="w3-tag">***</span>, and check how the text sound </p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <div class="w3-container">
+      <h3><b>CHECKED TEXT</b></h3>
+      <h5><span class="w3-opacity">Here is the checked text with profanity replaced</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <!-- <input class="w3-input" type="text" style="height:500px"> -->
+        <p>{{text}}</p>
+      </div>
+    </div>
+
+    <div class="w3-card w3-margin">
+        <div class="w3-row">
+            <div class="w3-container w3-padding w3-third w3-center">
+                <h4>Profanity words detected</h4>
+              </div>
+              <div class="w3-third w3-center">
+                <p></p>
+            </div>
+            <div class=" w3-container w3-third w3-center">
+                <h5>Total Words: {{total_p}}</h5>
+            </div>
+        </div>
+        
+        <div class="w3-container w3-white">
+        <p>{% for i in profanity %}
+        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">{{i}}</span> 
+        {% endfor %}
+    
+        </p>
+        </div>
+      </div>
+  </div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top" >
+  <!-- <img src="/w3images/avatar_g.jpg" style="width:100%"> -->
+
+    <div class="w3-container w3-white" style="height: 290px;">
+      <h4>HOW THE TEXT SOUNDS</h4>
+      <!-- <p>Just me, myself and I, </p> -->
+      <p><strong>Negative</strong></p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:{{sentiment[0]}}%">{{sentiment[0]}}%</div>
+          </div>
+          <p><b>Neutral</b></p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:{{sentiment[1]}}%">
+              <div class="w3-center w3-text-white">{{sentiment[1]}}%</div>
+            </div>
+          </div>
+          <p><b>Positive</b></p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:{{sentiment[2]}}%">{{sentiment[2]}}%</div>
+          </div>
+          
+    </div>
+  </div>
+  <!-- add a line -->
+  <hr> 
+ 
+  <!-- tetected bad words-->
+  
+  
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+
+
+</body>
+</html>
