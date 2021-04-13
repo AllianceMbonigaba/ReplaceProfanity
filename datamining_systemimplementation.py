@@ -20,7 +20,7 @@ import time
 """Text sentiment """
 
 import nltk
-nltk.download('vader_lexicon')
+# nltk.download('vader_lexicon')
 
 from nltk.sentiment.vader import SentimentIntensityAnalyzer 
 
@@ -109,8 +109,8 @@ import joblib
 # check the percent of english used in given text
 from nltk import wordpunct_tokenize
 from nltk.corpus import words
-nltk.download('stopwords')
-nltk.download('words')
+# nltk.download('stopwords')
+# nltk.download('words')
 
 def detect_english_percent(text):
 
