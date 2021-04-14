@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html') 
 
-@app.route("/predicts/", methods=['POST'])
+@app.route("/predicts/", methods=['POST', 'GET'])
 def predicts():
     if request.method == 'POST':
         text = request.form['subject']
@@ -19,7 +19,10 @@ def predicts():
         result = remove_badwords(text)
         
         return render_template('predicts.html', text = result, profanity = profanity, sentiment= sentiment, total_p = total_profanity_words)
-    return render_template('index.html') 
+    
+    if request.method == 'GET':
+
+        return render_template('index.html') 
 
 
 
